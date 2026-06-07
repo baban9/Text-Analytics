@@ -1,6 +1,34 @@
-# Text-Analytics
-Several supervised machine learning methods have been proposed in classifying numeric data into specified labels. However, classifying natural language, comparatively, is less explored as it possesses complicated challenges such as reading language at the machine level. This paper investigates the efficacy of using machine learning to categorize blogs. We design a text classification experiment to categorize blogs into three user groups: ‘teenage’, ‘adults’ and ‘mature’. Our empirical findings indicate that leveraging machine learning models and the right feature vectorization can improve the content shown to users against randomly selected ones.
+# Text Analytics
 
-The number of blog posts is increasing exponentially. In 2004, Pew institute reported that 2-7% have written blog posts and about 11% read blogs who have access to the internet [1]. Technorati’s web crawlers indicate that there are about 12,000 new blogs created each day; put another way, a new weblog is created every 7.4 seconds [2]. Given the popularity of blogs, it would be useful if we could devise a content classification system to automatically suggest the blogs to the right audience in terms of age group. However, it is difficult to group text into categories because of freestyle natural language. Bloggers at different levels write whatever is appealing to their mind, thus inventing sometimes new vocabulary and grammar. Nevertheless, some bloggers intentionally deviate from rules of language and decorum to create a spectacle for the sake of attracting a larger audience.
+Text classification workflow for structured NLP experiments with train/eval splits and model comparison.
 
-We used pure statistical learning methods to classify blogs conditioned on various feature vectorization techniques such as TF-IDF, count vectorizer and embeddings (Doc2vec and GloVe).
+## Problem
+
+Classify unstructured text into predefined categories with a reproducible baseline pipeline.
+
+## Approach
+
+`Classification_v1.ipynb` covers:
+
+- Text cleaning and tokenization
+- Feature extraction (bag-of-words or embeddings)
+- Classifier training and validation metrics
+
+## Reproducibility
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+jupyter lab
+```
+
+## Tech stack
+
+Python 3, Jupyter, scikit-learn, pandas
+
+## Limitations and next steps
+
+- Export trained model with joblib for batch inference
+- Add cross-validation and confusion matrix reporting
+- Split notebook into `src/` modules and a thin orchestration notebook
